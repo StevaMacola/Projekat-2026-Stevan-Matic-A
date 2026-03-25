@@ -10,12 +10,11 @@ namespace Projekat_2026_Stevan_Matic_A
 {
     internal class Konekcija
     {
-        static public SqlConnection Connect()
+        static public SqlConnection Connect(string gde)
         {
             string CS;
-            CS = ConfigurationManager.ConnectionStrings["skola"].ConnectionString;
+            CS = ConfigurationManager.ConnectionStrings[gde].ConnectionString;
             return new SqlConnection(CS);
-            return null;
         }
     }
 }

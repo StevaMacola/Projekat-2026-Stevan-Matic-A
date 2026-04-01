@@ -24,6 +24,7 @@ namespace Projekat_2026_Stevan_Matic_A
         {
             // Stevan Matic 
             // drugi red
+            comboBox1.SelectedItem = "skola";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -72,6 +73,18 @@ namespace Projekat_2026_Stevan_Matic_A
         private void txtSifra_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Registracija nova = new Registracija();
+            nova.ShowDialog();
+
         }
     }
 }

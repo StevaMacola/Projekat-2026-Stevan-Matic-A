@@ -82,6 +82,7 @@ namespace Projekat_2026_Stevan_Matic_A
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Program.user = comboBox1.SelectedItem.ToString();
             Registracija nova = new Registracija();
             nova.ShowDialog();
 

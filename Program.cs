@@ -8,6 +8,7 @@ namespace Projekat_2026_Stevan_Matic_A
 {
     internal static class Program
     {
+        static public string user;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,7 @@ namespace Projekat_2026_Stevan_Matic_A
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Registracija());
         }
     }
 }

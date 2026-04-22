@@ -34,6 +34,7 @@
             this.podaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.napraviTermineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.klijentelaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,8 @@
             // 
             // izvestajToolStripMenuItem
             // 
+            this.izvestajToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.klijentelaToolStripMenuItem});
             this.izvestajToolStripMenuItem.Name = "izvestajToolStripMenuItem";
             this.izvestajToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.izvestajToolStripMenuItem.Text = "Podaci";
@@ -81,6 +84,13 @@
             this.napraviTermineToolStripMenuItem.Name = "napraviTermineToolStripMenuItem";
             this.napraviTermineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.napraviTermineToolStripMenuItem.Text = "napravi termine";
+            // 
+            // klijentelaToolStripMenuItem
+            // 
+            this.klijentelaToolStripMenuItem.Name = "klijentelaToolStripMenuItem";
+            this.klijentelaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.klijentelaToolStripMenuItem.Text = "Klijentela";
+            this.klijentelaToolStripMenuItem.Click += new System.EventHandler(this.klijentelaToolStripMenuItem_Click);
             // 
             // Glavna
             // 
@@ -111,5 +121,6 @@
         private System.Windows.Forms.ToolStripMenuItem podaciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem napraviTermineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem klijentelaToolStripMenuItem;
     }
 }

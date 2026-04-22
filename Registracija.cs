@@ -36,24 +36,28 @@ namespace Projekat_2026_Stevan_Matic_A
                 veza.Close();
                 if (ima > 0)
                 {
-                    MessageBox.Show("Ima takav email");
+                    MessageBox.Show("Ovaj email je vec registrovan!");
                 }
                 else
                 {
                     string naredba = "INSERT INTO korisnik VALUES('";
-                    naredba += textBox3.Text + "','";
-                    naredba += textBox4.Text + "', 0)";
+                    naredba += textBox1.Text + "','";
+                    naredba += textBox4.Text + "','";
+                    naredba += textBox3.Text + "')";
                     veza.Open();
                     SqlCommand uradi = new SqlCommand(naredba, veza);
                     uradi.ExecuteNonQuery();
                     veza.Close();
-                    MessageBox.Show("Uradio sam");
-                    
+                    MessageBox.Show("Uspešno ste se registrovali!");
+                    this.Hide();
+                    Glavna forma = new Glavna();
+                    forma.Show();
+
                 }
             }
             else
             {
-                MessageBox.Show("ponovljena lozinka nije dobra");
+                MessageBox.Show("Ponovljena lozinka nije dobra!");
             }
         }
 

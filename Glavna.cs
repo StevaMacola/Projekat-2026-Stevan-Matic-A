@@ -26,5 +26,10 @@ namespace Projekat_2026_Stevan_Matic_A
         {
             Application.Exit();
         }
+
+        private void klijentelaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

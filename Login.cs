@@ -36,7 +36,7 @@ namespace Projekat_2026_Stevan_Matic_A
             else
             {
                 string lokacija = comboBox1.SelectedItem.ToString();
-                SqlConnection veza = Konekcija.Connect(lokacija);
+                SqlConnection veza = Konekcija.Connect();
                 DataTable podaci = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM korisnik WHERE ime ="+"'"+txtIme.Text+"'", veza);
                 adapter.Fill(podaci);

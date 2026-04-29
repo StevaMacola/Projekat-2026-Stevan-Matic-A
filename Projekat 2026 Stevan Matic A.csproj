@@ -53,6 +53,12 @@
     <Compile Include="Glavna.Designer.cs">
       <DependentUpon>Glavna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klijent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klijent.Designer.cs">
+      <DependentUpon>Klijent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Konekcija.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,9 @@
     </Compile>
     <EmbeddedResource Include="Glavna.resx">
       <DependentUpon>Glavna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klijent.resx">
+      <DependentUpon>Klijent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

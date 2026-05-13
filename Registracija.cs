@@ -28,7 +28,7 @@ namespace Projekat_2026_Stevan_Matic_A
             string baza = Program.user;
             if (textBox4.Text == textBox5.Text)
             {
-                SqlConnection veza = Konekcija.Connect(baza);
+                SqlConnection veza = Konekcija.Connect();
                 string provera = "SELECT COUNT(*) FROM Korisnik WHERE email='" + textBox3.Text + "'";
                 SqlCommand komanda = new SqlCommand(provera, veza);
                 veza.Open();

@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tBIme = new System.Windows.Forms.TextBox();
             this.tBPrezime = new System.Windows.Forms.TextBox();
             this.tBUlica = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@
             this.tBBroj = new System.Windows.Forms.TextBox();
             this.tBGrad = new System.Windows.Forms.TextBox();
             this.tBMobilni = new System.Windows.Forms.TextBox();
-            this.tBDatum = new System.Windows.Forms.TextBox();
             this.bDodaj = new System.Windows.Forms.Button();
             this.bIzbrisi = new System.Windows.Forms.Button();
             this.bPromeni = new System.Windows.Forms.Button();
@@ -52,7 +50,6 @@
             this.bProsli = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tBId = new System.Windows.Forms.TextBox();
-            this.cBserver = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -128,15 +125,6 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Mobilni :";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(178, 351);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "datum upisa :";
-            // 
             // tBIme
             // 
             this.tBIme.Location = new System.Drawing.Point(324, 107);
@@ -186,13 +174,6 @@
             this.tBMobilni.Size = new System.Drawing.Size(100, 20);
             this.tBMobilni.TabIndex = 15;
             // 
-            // tBDatum
-            // 
-            this.tBDatum.Location = new System.Drawing.Point(324, 348);
-            this.tBDatum.Name = "tBDatum";
-            this.tBDatum.Size = new System.Drawing.Size(100, 20);
-            this.tBDatum.TabIndex = 16;
-            // 
             // bDodaj
             // 
             this.bDodaj.Location = new System.Drawing.Point(349, 404);
@@ -211,6 +192,7 @@
             this.bIzbrisi.TabIndex = 18;
             this.bIzbrisi.Text = "izbrisi ";
             this.bIzbrisi.UseVisualStyleBackColor = true;
+            this.bIzbrisi.Click += new System.EventHandler(this.bIzbrisi_Click);
             // 
             // bPromeni
             // 
@@ -220,6 +202,7 @@
             this.bPromeni.TabIndex = 19;
             this.bPromeni.Text = "promeni";
             this.bPromeni.UseVisualStyleBackColor = true;
+            this.bPromeni.Click += new System.EventHandler(this.bPromeni_Click);
             // 
             // bSledeci
             // 
@@ -229,6 +212,7 @@
             this.bSledeci.TabIndex = 20;
             this.bSledeci.Text = ">";
             this.bSledeci.UseVisualStyleBackColor = true;
+            this.bSledeci.Click += new System.EventHandler(this.bSledeci_Click);
             // 
             // bProsli
             // 
@@ -238,6 +222,7 @@
             this.bProsli.TabIndex = 21;
             this.bProsli.Text = "<";
             this.bProsli.UseVisualStyleBackColor = true;
+            this.bProsli.Click += new System.EventHandler(this.bProsli_Click);
             // 
             // label10
             // 
@@ -255,20 +240,11 @@
             this.tBId.Size = new System.Drawing.Size(100, 20);
             this.tBId.TabIndex = 23;
             // 
-            // cBserver
-            // 
-            this.cBserver.FormattingEnabled = true;
-            this.cBserver.Location = new System.Drawing.Point(644, 57);
-            this.cBserver.Name = "cBserver";
-            this.cBserver.Size = new System.Drawing.Size(121, 21);
-            this.cBserver.TabIndex = 24;
-            // 
             // Klijent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cBserver);
             this.Controls.Add(this.tBId);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.bProsli);
@@ -276,7 +252,6 @@
             this.Controls.Add(this.bPromeni);
             this.Controls.Add(this.bIzbrisi);
             this.Controls.Add(this.bDodaj);
-            this.Controls.Add(this.tBDatum);
             this.Controls.Add(this.tBMobilni);
             this.Controls.Add(this.tBGrad);
             this.Controls.Add(this.tBBroj);
@@ -284,7 +259,6 @@
             this.Controls.Add(this.tBUlica);
             this.Controls.Add(this.tBPrezime);
             this.Controls.Add(this.tBIme);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -311,7 +285,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tBIme;
         private System.Windows.Forms.TextBox tBPrezime;
         private System.Windows.Forms.TextBox tBUlica;
@@ -319,7 +292,6 @@
         private System.Windows.Forms.TextBox tBBroj;
         private System.Windows.Forms.TextBox tBGrad;
         private System.Windows.Forms.TextBox tBMobilni;
-        private System.Windows.Forms.TextBox tBDatum;
         private System.Windows.Forms.Button bDodaj;
         private System.Windows.Forms.Button bIzbrisi;
         private System.Windows.Forms.Button bPromeni;
@@ -327,6 +299,5 @@
         private System.Windows.Forms.Button bProsli;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tBId;
-        private System.Windows.Forms.ComboBox cBserver;
     }
 }

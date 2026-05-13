@@ -17,7 +17,7 @@ namespace Projekat_2026_Stevan_Matic_A
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Termini());
         }
     }
 }

@@ -29,7 +29,8 @@ namespace Projekat_2026_Stevan_Matic_A
 
         private void klijentelaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Klijent nova = new Klijent();
+            nova.ShowDialog();
         }
     }
 }

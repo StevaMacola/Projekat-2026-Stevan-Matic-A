@@ -35,7 +35,6 @@ namespace Projekat_2026_Stevan_Matic_A
                 tBOpstina.Text = "";
                 tBGrad.Text = "";              
                 tBMobilni.Text = "";
-                tBDatum.Text = "";
             }
             else
             {
@@ -47,7 +46,6 @@ namespace Projekat_2026_Stevan_Matic_A
                 tBOpstina.Text = tabela.Rows[br_sloga][5].ToString();
                 tBGrad.Text = tabela.Rows[br_sloga][6].ToString();
                 tBMobilni.Text = tabela.Rows[br_sloga][7].ToString();
-                tBDatum.Text = tabela.Rows[br_sloga][8].ToString();
             }
             if (br_sloga == tabela.Rows.Count - 1)
                 bSledeci.Enabled = false;
@@ -64,32 +62,93 @@ namespace Projekat_2026_Stevan_Matic_A
 
         private void bDodaj_Click(object sender, EventArgs e)
         {
-            string naredba = "UPDATE osoba SET ";
-            naredba += "klijent_ID='" + tBIme.Text + "',";
-            naredba += "Ime='" + tBIme.Text + "',";
-            naredba += "Prezime='" + tBPrezime.Text + "',";
-            naredba += "Ulica='" + tBUlica.Text + "',";
-            naredba += "Broj='" + tBBroj.Text + "',";
-            naredba += "Opština='" + tBOpstina.Text + "',";
-            naredba += "Grad='" + tBGrad.Text + "',";
-            naredba += "Mobilni='" + tBMobilni.Text + "',";
-            naredba += "datum_upisa='" + tBDatum.Text + "'";
-            naredba += "WHERE id = " + tBId.Text;
-            string lokacija = cBserver.SelectedItem.ToString();
-            SqlConnection veza = Konekcija.Connect(lokacija);
+            string naredba = "insert into Klijent values('";
+            naredba = naredba + tBIme.Text + "','";
+            naredba = naredba + tBPrezime.Text + "','";
+            naredba = naredba + tBUlica.Text + "','";
+            naredba = naredba + tBBroj.Text + "','";
+            naredba = naredba + tBOpstina.Text + "','";
+            naredba = naredba + tBGrad.Text + "','";
+            naredba = naredba + tBMobilni.Text + "')";
+            SqlConnection veza = Konekcija.Connect();
             SqlCommand komanda = new SqlCommand(naredba, veza);
             veza.Open();
             komanda.ExecuteNonQuery();
             veza.Close();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM osoba", veza);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Klijent", veza);
+            tabela = new DataTable();
+            da.Fill(tabela);
+            br_sloga = tabela.Rows.Count - 1;
+            prikazi();
+        }
+        private void bPromeni_Click(object sender, EventArgs e)
+        {
+            string naredba = "UPDATE Klijent SET ";
+            naredba += "Ime='" + tBIme.Text + "',";
+            naredba += "Prezime='" + tBPrezime.Text + "',";
+            naredba += "Ulica='" + tBUlica.Text + "',";
+            naredba += "Broj='" + tBBroj.Text + "',";
+            naredba += "Opšitna='" + tBOpstina.Text + "',";
+            naredba += "Grad='" + tBGrad.Text + "',";
+            naredba += "Mobilni='" + tBMobilni.Text + "'";
+            naredba += "WHERE klijent_ID = " + tBId.Text;
+            SqlConnection veza = Konekcija.Connect();
+            SqlCommand komanda = new SqlCommand(naredba, veza);
+            veza.Open();
+            komanda.ExecuteNonQuery();
+            veza.Close();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Klijent", veza);
+            tabela = new DataTable();
+            da.Fill(tabela);
+            prikazi();
+        }
+        private void bIzbrisi_Click(object sender, EventArgs e)
+        {
+           
+                if (br_sloga == tabela.Rows.Count - 1)
+                {
+                    br_sloga--;
+                }
+                string naredba = "DELETE FROM Klijent WHERE id=" + tBId.Text;
+                SqlConnection veza = Konekcija.Connect();
+                SqlCommand komanda = new SqlCommand(naredba, veza);
+                try
+                {
+                    veza.Open();
+                    komanda.ExecuteNonQuery();
+                    veza.Close();
+                }
+                catch (Exception greska)
+                {
+                    MessageBox.Show(greska.GetType().ToString());
+                }
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Klijent", veza);
+                tabela = new DataTable();
+                da.Fill(tabela);
+                prikazi();
+            }
+        private void Klijent_Load(object sender, EventArgs e)
+        {
+            br_sloga = 0;
+            SqlConnection veza = Konekcija.Connect();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Klijent", veza);
             tabela = new DataTable();
             da.Fill(tabela);
             prikazi();
         }
 
-        private void Klijent_Load(object sender, EventArgs e)
+        private void bSledeci_Click(object sender, EventArgs e)
         {
-            cBserver.SelectedItem = "skola";
+            br_sloga++;
+            prikazi();
         }
+
+        private void bProsli_Click(object sender, EventArgs e)
+        {
+            br_sloga--;
+            prikazi();
+        }
+
+       
     }
 }
